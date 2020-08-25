@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -44,14 +45,26 @@ class _AuthScreenState extends State<AuthScreen> {
           email: email,
           password: password,
         );
+        String fileName = basename(userImage.path);
+        StorageReference firebaseStorageRef = FirebaseStorage.instance
+            .ref()
+            .child('user_image')
+            .child(authResult.user.uid + '.jpg');
+        StorageUploadTask uploadTask = firebaseStorageRef.putFile(userImage);
+        StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
+        taskSnapshot.ref.getDownloadURL().then(
+              (value) => print("Done: $value"),
+            );
 
         // final FirebaseStorage storage = FirebaseStorage(
         //   app: FirebaseStorage.instance.app,
         //   storageBucket: 'gs://chatapp-1b780.appspot.com',
         // );
 
-        // final StorageReference ref2 =
-        //     storage.ref().child('userimage').child('${authResult.user.id}.jpg');
+        // final StorageReference ref2 = storage
+        //     .ref()
+        //     .child('userimage')
+        //     .child(_auth.currentUser.uid + '.jpg');
         // final StorageUploadTask uploadTask = ref2.putFile(userImage);
         // uploadTask.onComplete
         //     .then((value) => print(value))

@@ -1,3 +1,48 @@
+// import 'package:chatApp/solutions/imageUploadToFirebaseStorage/upload_image.dart';
+
+// ///Solution Start
+// import 'package:flutter/material.dart';
+// import 'package:firebase_core/firebase_core.dart';
+
+// void main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp();
+
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatefulWidget {
+//   @override
+//   _MyAppState createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Demo',
+//       theme: ThemeData(
+//         backgroundColor: Colors.pink,
+//         primarySwatch: Colors.pink,
+//         accentColor: Colors.deepPurple,
+//         accentColorBrightness: Brightness.dark,
+//         visualDensity: VisualDensity.adaptivePlatformDensity,
+//         buttonTheme: ButtonTheme.of(context).copyWith(
+//           buttonColor: Colors.pink,
+//           textTheme: ButtonTextTheme.primary,
+//           shape: RoundedRectangleBorder(
+//             borderRadius: BorderRadius.circular(20),
+//           ),
+//         ),
+//       ),
+//       home: UploadingImageToFirebaseStorage(),
+//     );
+//   }
+// }
+
+///Solution End
+///...
+// /Start of File
 import 'package:chatApp/screens/chat_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -48,6 +93,8 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+///... Endof File
 
 // import 'dart:async';
 // import 'dart:io';

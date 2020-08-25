@@ -44,6 +44,7 @@ dependencies:
   firebase_storage: ^4.0.0
   # Simple, fast generation of RFC4122 UUIDs.
   uuid: ^2.2.0
+  firebase_analytics: ^5.0.6
 
 dev_dependencies:
   flutter_test:
